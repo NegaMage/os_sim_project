@@ -42,6 +42,8 @@ def main():
     pagerep_btn.pack(side=tk.LEFT)
     CreateToolTip(pagerep_btn, text = 'Generates analysis of page replacement methods\n'
                  'Gives number of page faults and frame contents for FIFO, LRU and OPTIMAL.')
+    desc = tk.Button(frame, text="Summary", command=page_rep_desc)
+    desc.pack(side=tk.LEFT)
 
     frame = tk.Frame(mainwindow)
     frame.pack(padx=10, pady=10)
@@ -70,6 +72,8 @@ def main():
     CreateToolTip(dinnerp, text = 'This is a simulation\n'
                  'Delay of 3 seconds to generate output\n'
                  'Simulates 5 philosophers in the dining philosophers problem')
+    desc = tk.Button(frame, text="Summary", command=dining_p_desc)
+    desc.pack(side=tk.LEFT)
     
     frame = tk.Frame(mainwindow)
     frame.pack(padx=10, pady=10)
@@ -78,6 +82,8 @@ def main():
     CreateToolTip(sleepyb, text = 'This is a simulation\n'
                  'Delay of a few seconds to generate output\n'
                  'Simulates 50 customers and 3 barbers in the sleeping barbers problem')
+    desc = tk.Button(frame, text="Summary", command=sleeping_b_desc)
+    desc.pack(side=tk.LEFT)
 
     credits_frame = tk.Frame(mainwindow, background='gray')
     credits_frame.pack(padx=10, pady=10, fill='both', expand=tk.YES)

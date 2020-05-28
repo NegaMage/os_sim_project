@@ -187,3 +187,78 @@ def page_rep_desc():
 
     tbox.config(state='disabled')    
     root.mainloop()
+
+def dining_p_desc():
+    root = tk.Tk()
+    root.title("Dining Philosopher Problem")
+    root.minsize(600, 700)
+
+    desc_frame = tk.Frame(root, background='white')
+    desc_frame.pack(padx=10, pady=10, fill='both', expand=tk.YES)
+
+    def on_configure(event):
+        canvas.configure(scrollregion=canvas.bbox('all'))
+
+    canvas = tk.Canvas(desc_frame, background='gray')
+    canvas.pack(side=tk.LEFT, fill='both', expand=tk.YES)
+
+    scrollbar = tk.Scrollbar(desc_frame, command=canvas.yview)
+    scrollbar.pack(side=tk.LEFT, fill='y')
+
+    canvas.configure(yscrollcommand = scrollbar.set)
+
+    canvas.bind('<Configure>', on_configure)
+
+
+    frame = tk.Frame(canvas, background='gray')
+    canvas.create_window((0,0), window=frame, anchor='nw')
+
+
+    lbl = tk.Label(frame, text="Dining Philosopher Problem", font="-size 20", background='gray')
+    lbl.pack()
+
+    tbox = tk.Text(frame, background='gray', wrap=tk.WORD)
+    tbox.pack()
+    tbox.insert(tk.INSERT,"The Dining Philosopher Problem – The Dining Philosopher Problem states that K philosophers seated around a circular table with one fork between each pair of philosophers. There is one fork between each philosopher. A philosopher may eat if he can pickup the two forks adjacent to him. One fork may be picked up by any one of its adjacent followers but not both.\n\nFive silent philosophers sit at a round table with bowls of spaghetti. Forks are placed between each pair of adjacent philosophers.\n\nEach philosopher must alternately think and eat. However, a philosopher can only eat spaghetti when they have both left and right forks. Each fork can be held by only one philosopher and so a philosopher can use the fork only if it is not being used by another philosopher. After an individual philosopher finishes eating, they need to put down both forks so that the forks become available to others. A philosopher can only take the fork on their right or the one on their left as they become available and they cannot start eating before getting both forks.\n\nEating is not limited by the remaining amounts of spaghetti or stomach space; an infinite supply and an infinite demand are assumed.\n\nThe problem is how to design a discipline of behavior (a concurrent algorithm) such that no philosopher will starve; i.e., each can forever continue to alternate between eating and thinking, assuming that no philosopher can know when others may want to eat or think.\n\nRead more at : https://en.wikipedia.org/wiki/Dining_philosophers_problem")
+
+
+    tbox.config(state='disabled')    
+    root.mainloop()
+
+
+def sleeping_b_desc():
+    root = tk.Tk()
+    root.title("Sleeping Barbers Problem")
+    root.minsize(600, 700)
+
+    desc_frame = tk.Frame(root, background='white')
+    desc_frame.pack(padx=10, pady=10, fill='both', expand=tk.YES)
+
+    def on_configure(event):
+        canvas.configure(scrollregion=canvas.bbox('all'))
+
+    canvas = tk.Canvas(desc_frame, background='gray')
+    canvas.pack(side=tk.LEFT, fill='both', expand=tk.YES)
+
+    scrollbar = tk.Scrollbar(desc_frame, command=canvas.yview)
+    scrollbar.pack(side=tk.LEFT, fill='y')
+
+    canvas.configure(yscrollcommand = scrollbar.set)
+
+    canvas.bind('<Configure>', on_configure)
+
+
+    frame = tk.Frame(canvas, background='gray')
+    canvas.create_window((0,0), window=frame, anchor='nw')
+
+
+    lbl = tk.Label(frame, text="Sleeping Barbers Problem", font="-size 20", background='gray')
+    lbl.pack()
+
+    tbox = tk.Text(frame, background='gray', wrap=tk.WORD)
+    tbox.pack()
+    tbox.insert(tk.INSERT,"The sleeping barber problem is a classic inter-process communication and synchronization problem between multiple operating system processes. The analogy is based upon a hypothetical barber shop with one barber. There is a barber shop which has one barber, one barber chair, and n chairs for waiting for customers if there are any to sit on the chair.\n\nIf there is no customer, then the barber sleeps in his own chair. When a customer arrives, he has to wake up the barber. If there are many customers and the barber is cutting a customer’s hair, then the remaining customers either wait if there are empty chairs in the waiting room or they leave if no chairs are empty.Read more at : https://en.wikipedia.org/wiki/Sleeping_barber_problem")
+
+
+    tbox.config(state='disabled')    
+    root.mainloop()
